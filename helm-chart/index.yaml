@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  curaboard:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-17T16:25:35.091194+01:00"
+    description: A Helm chart for Kubernetes
+    digest: f8e26afd9d378d1144c7ac93f59316f1b5491d35e6c6da2bab722a6f55f730a0
+    name: curaboard
+    type: application
+    urls:
+    - s3://curaboard-helm-chart-01/curaboard-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-06-17T16:25:35.090636+01:00"

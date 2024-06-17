@@ -1,0 +1,5 @@
+.terraform
+helm-chart/curaboard-0.1.0.tgz
+services/.terraform.lock.hcl
+services/tfplan
+eks-config/secret.sh
