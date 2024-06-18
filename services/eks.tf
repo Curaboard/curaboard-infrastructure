@@ -18,7 +18,7 @@ resource "aws_eks_cluster" "prod_cluster" {
   enabled_cluster_log_types = ["api", "audit"]
 
   tags = {
-    "project" = "streambix"
+    "project" = "curaboard"
   }
 }
 
@@ -48,6 +48,6 @@ resource "aws_eks_node_group" "prod_cluster_node_group" {
   ]
 
   tags = {
-    "project" = "streambix"
+    "project" = "curaboard"
   }
 }
