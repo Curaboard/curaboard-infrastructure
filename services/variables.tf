@@ -25,10 +25,28 @@ variable "subnet_id3" {
 }
 
 # #ECR
-variable "ecr_repo_name" {
+variable "frontend_repo_name" {
   description = "ECR Name"
   type        = string
-  default     = "curaboard"
+  default     = "curaboard/frontend"
+}
+
+variable "backend_repo_name" {
+  description = "ECR Name"
+  type        = string
+  default     = "curaboard/backend"
+}
+
+variable "auth_repo_name" {
+  description = "ECR Name"
+  type        = string
+  default     = "curaboard/auth"
+}
+
+variable "shopify_repo_name" {
+  description = "ECR Name"
+  type        = string
+  default     = "curaboard/shopify"
 }
 
 # EKS
@@ -42,6 +60,12 @@ variable "node_group_name" {
   description = "EKS Node Group Name"
   type        = string
   default     = "curaboard-node-group"
+}
+
+variable "instance_type" {
+  description = "Instance Size"
+  type        = list(string)
+  default     = ["t3.medium"]
 }
 
 #S3 for Helm Chart

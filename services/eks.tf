@@ -28,11 +28,13 @@ resource "aws_eks_node_group" "prod_cluster_node_group" {
   node_group_name = var.node_group_name
   node_role_arn   = aws_iam_role.workernodes.arn
   subnet_ids      = [var.subnet_id1, var.subnet_id2, var.subnet_id3]
+  instance_types  = [var.instance_type.0]
+  capacity_type   = "ON_DEMAND"
 
   scaling_config {
-    desired_size = 1
-    max_size     = 5
-    min_size     = 1
+    desired_size = 2
+    max_size     = 8
+    min_size     = 2
   }
 
   update_config {
