@@ -13,10 +13,10 @@ terraform init
 helm package curaboard
 aws s3 cp curaboard-0.1.0.tgz s3://curaboard-helm-chart-01/
 helm repo index . --url s3://curaboard-helm-chart-01/
-aws s3 cp index.yaml s3://curaboard-helm-chart-01/
+aws s3 cp index.yaml s3://curaboard-helm-chart-01/ 
 helm plugin install https://github.com/hypnoglow/helm-s3.git
-helm s3 init s3://curaboard-helm-chart-01/
-helm repo add curaboard s3://curaboard-helm-chart-01/
+helm s3 init s3://curaboard-helm-chart-01/curaboard-0.1.0.tgz
+helm repo add curaboard s3://curaboard-helm-chart-01/ 
 helm repo update
 ```
 
