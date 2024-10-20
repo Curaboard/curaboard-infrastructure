@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: curaboard-ingress
+  namespace: staging
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"  
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: staging.curaboard.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: curaboard-backend
+                port:
+                  number: 4000           
+  tls:
+    - hosts:
+        - staging.curaboard.com
+      secretName: tls-secret 

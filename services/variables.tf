@@ -65,7 +65,7 @@ variable "node_group_name" {
 variable "instance_type" {
   description = "Instance Size"
   type        = list(string)
-  default     = ["t3a.medium"]
+  default     = ["t3.medium"] #["t3a.medium"]
 }
 
 #S3 for Helm Chart

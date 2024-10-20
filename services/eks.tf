@@ -30,10 +30,12 @@ resource "aws_eks_node_group" "prod_cluster_node_group" {
   subnet_ids      = [var.subnet_id1, var.subnet_id2, var.subnet_id3]
   instance_types  = [var.instance_type.0]
   capacity_type   = "ON_DEMAND"
+  ami_type        = "AL2023_x86_64_STANDARD"
+  disk_size       = 80
 
   scaling_config {
     desired_size = 2
-    max_size     = 8
+    max_size     = 3
     min_size     = 2
   }
 

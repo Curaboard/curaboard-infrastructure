@@ -24,3 +24,8 @@ helm repo update
 ```
 kubectl apply -f eks-config
 ```
+
+
+kubectl cordon ip-172-31-28-132.us-east-2.compute.internal
+kubectl drain ip-172-31-28-132.us-east-2.compute.internal --ignore-daemonsets --delete-emptydir-data
+kubectl delete node ip-172-31-28-132.us-east-2.compute.internal
